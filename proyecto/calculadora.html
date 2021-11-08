@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <input type="text" id="number1" placeholder="number1">
+    <input type="text" id="number2" placeholder="number2">
+
+    <option value="suma">+</option>
+    <option value="resta">-</option>
+    <option value="multiplicacion">*</option>
+    <option value="division">/</option>
+
+
+    <!--select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select-->
+
+<button id="=calcular">Calcular</button>
+<output id="r"></output>
+<script>
+
+    let op;
+    document.querySelector('#suma').addEventListener('click', () =>{
+        op = "+";
+    });
+    document.querySelector('#resta').addEventListener('click', () =>{
+        op = "-";
+    });
+    document.querySelector('#multiplicacion').addEventListener('click', () =>{
+        op = "*";
+    });
+    document.querySelector('#division').addEventListener('click', () =>{
+        op = "/";
+    });
+
+
+    document.querySelector('#calcular').addEventListener('click', () =>{
+        const number1 = parseInt(document.querySelector('#number1').value);
+        const number2 = parseInt(document.querySelector('#number2').value);
+        //const op = document.querySelector('#op').value;
+        let r;
+        if(op == '+'){
+            r = number1 + number2;
+        }else if(op == '-'){
+            r = number1 - number2;
+        }else if(op == '*'){
+            r = number1 * number2;
+        }else if(op == '/'){
+            r = number1 / number2
+        }
+        document.querySelector('#r').innerHTML = r; 
+
+    });
+</script>
+    
+</body>
+</html>
